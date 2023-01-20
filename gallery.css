@@ -48,7 +48,7 @@ html, body {
 
 .gal-image {
     width: 100%;
-    background-position: center top;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -57,7 +57,7 @@ html, body {
 }
 
 .gal-inner {
-    background-position: center top;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -93,7 +93,6 @@ html, body {
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-position: center top;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
