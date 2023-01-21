@@ -57,9 +57,7 @@ html, body {
 }
 
 .gal-inner {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    object-fit: cover;
     height: 100%;
     width: 100%;
 }
