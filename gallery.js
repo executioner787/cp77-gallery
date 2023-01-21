@@ -1,4 +1,7 @@
 const dir = './media/img/';
+/*
+fill in the names of image files located in the directory
+*/
 var images = ['photomode_02022022_202107.png', 
               'photomode_02022022_205528.png', 
               'photomode_02022022_205733.png', 
@@ -66,6 +69,11 @@ document.getElementById("viewer").onclick = function () {
 
 window.onload = function() {
     shuffle(images);
+    /*
+    select one:
+    ***FullRandom - randomly selects pattern bits to fill in the grid
+    ***PartRandom - selects each pattern bit using a random mask to avoid pattern repetition
+    */
     //doFullRandomGallery(document.getElementById('content'), 1);
     doPartRandomGallery(document.getElementById('content'), 1);
 }
@@ -80,7 +88,7 @@ function makeGalleryElement(i, col_st, col_end, row_st, row_end) {
     temp.onclick = function () {
         var view = document.getElementById("viewer");
         view.style.display = "block";
-        view.style.backgroundImage = "url(\"" + dir + images[i] + "\")";
+        document.getElementById("view-img").src = dir + images[i];
         setLeftRight(i);
     };
     var inn = document.createElement("img");
@@ -106,26 +114,26 @@ function setLeftRight(i) {
     if(i > 0) {
         left.onclick = function () {
             event.stopPropagation();
-            document.getElementById("viewer").style.backgroundImage = "url(\"" + dir + images[i - 1] + "\")";
+            document.getElementById("view-img").src = dir + images[i - 1];
             setLeftRight(i - 1);
         };
     } else {
         left.onclick = function () {
             event.stopPropagation();
-            document.getElementById("viewer").style.backgroundImage = "url(\"" + dir + images[images.length - 1] + "\")";
+            document.getElementById("view-img").src = dir + images[images.length - 1];
             setLeftRight(images.length - 1);
         };
     }
     if(i < images.length - 1) {
         right.onclick = function () {
             event.stopPropagation();
-            document.getElementById("viewer").style.backgroundImage = "url(\"" + dir + images[i + 1] + "\")";
+            document.getElementById("view-img").src = dir + images[i + 1];
             setLeftRight(i + 1);
         };
     } else {
         right.onclick = function () {
             event.stopPropagation();
-            document.getElementById("viewer").style.backgroundImage = "url(\"" + dir + images[0] + "\")";
+            document.getElementById("view-img").src = dir + images[0];
             setLeftRight(0);
         };
     }
