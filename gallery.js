@@ -83,9 +83,9 @@ function makeGalleryElement(i, col_st, col_end, row_st, row_end) {
         view.style.backgroundImage = "url(\"" + dir + images[i] + "\")";
         setLeftRight(i);
     };
-    var inn = document.createElement("div");
+    var inn = document.createElement("img");
     inn.className = "gal-inner";
-    inn.style.backgroundImage = "url(\"" + dir + images[i] + "\")";
+    inn.src = dir + images[i];
     temp.appendChild(inn);
     return temp;
 }
